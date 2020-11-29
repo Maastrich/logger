@@ -1,0 +1,23 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"extends": [
+		"eslint-config-airbnb-typescript"
+	],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"import/prefer-default-export": "off",
+		"@typescript-eslint/indent": "off",
+		"no-tabs": "off"
+	},
+	"settings": {
+		"react": {
+			"version": "0.0.0" // Ignore missing react package
+		}
+	}
+}
