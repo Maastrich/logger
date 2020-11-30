@@ -102,7 +102,7 @@ var Logger = /** @class */ (function () {
             }
         }
         else {
-            var str = "\t-> " + what.join('\t-> ');
+            var str = "\t-> " + what.join('\n\t-> ');
             process.stderr.write(this.fromError + "[" + where + "]" + this.errorColor + "\n" + ("" + str) + "\n" + this.defaultColor);
             if (fatal) {
                 fs_1.default.appendFile(this.path + "error.log", "[" + new Date().toString() + "]\n[" + where + "]\t" + what + "\n\n", function (err) {
@@ -121,7 +121,7 @@ var Logger = /** @class */ (function () {
                     });
                 }
                 else {
-                    var str = "\t-> " + what.join('\t-> ');
+                    var str = "\t-> " + what.join('\n\t-> ');
                     fs_1.default.appendFile(_this.path + "error.log", "[" + new Date().toString() + "]\n[" + where + "]\t" + str + "\n\n", function (err) {
                         if (err)
                             throw new Error("Unable to log error: " + err);
@@ -163,7 +163,7 @@ var Logger = /** @class */ (function () {
             process.stdout.write(this.infoColor + "Info:\t-> " + ("" + what) + "\n" + this.defaultColor);
         }
         else {
-            var str = "\t-> " + what.join('\t-> ');
+            var str = "\t-> " + what.join('\n\t-> ');
             process.stdout.write(this.infoColor + "Info:" + ("" + str) + "\n" + this.defaultColor);
         }
         return {
@@ -175,7 +175,7 @@ var Logger = /** @class */ (function () {
                     });
                 }
                 else {
-                    var str = "\t-> " + what.join('\t-> ');
+                    var str = "\t-> " + what.join('\n\t-> ');
                     fs_1.default.appendFile(_this.path + "info.log", "[" + new Date().toString() + "]\n" + ("" + str) + "\n", function (err) {
                         if (err)
                             throw new Error("Unable to log info: " + err);
