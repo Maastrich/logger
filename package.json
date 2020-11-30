@@ -1,5 +1,5 @@
 {
-  "name": "logger",
+  "name": "maastrich-logger",
   "version": "1.0.0",
   "description": "Logger",
   "main": "dist/index.js",
