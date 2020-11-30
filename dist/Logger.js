@@ -20,6 +20,7 @@ var Logger = /** @class */ (function () {
      * @memberof Logger
      */
     function Logger(logFolder) {
+        if (logFolder === void 0) { logFolder = ''; }
         /**
          *
          *
@@ -69,12 +70,14 @@ var Logger = /** @class */ (function () {
          */
         this.fromError = '\u001b[31m';
         this.path = path_1.default.normalize(logFolder);
-        if (!fs_1.default.existsSync(this.path)) {
-            fs_1.default.mkdirSync(this.path);
+        if (logFolder.length) {
+            if (!fs_1.default.existsSync(this.path)) {
+                fs_1.default.mkdirSync(this.path);
+            }
+            fs_1.default.unlink(this.path + "error.log", function () { });
+            fs_1.default.unlink(this.path + "debug.log", function () { });
+            fs_1.default.unlink(this.path + "info.log", function () { });
         }
-        fs_1.default.unlink(this.path + "error.log", function () { });
-        fs_1.default.unlink(this.path + "debug.log", function () { });
-        fs_1.default.unlink(this.path + "info.log", function () { });
         this.waitForClose();
     }
     /**

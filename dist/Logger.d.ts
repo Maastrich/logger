@@ -68,7 +68,7 @@ declare class Logger {
      * @param {string} logFolder
      * @memberof Logger
      */
-    constructor(logFolder: string);
+    constructor(logFolder?: string);
     /**
      *
      *
